@@ -1,4 +1,4 @@
-// Funcionalidad simulada de administración
+// admin.js - acciones simuladas para el panel administrativo
 const adminActions = document.querySelectorAll(".admin-actions button");
 
 adminActions.forEach(btn => {
@@ -6,3 +6,4 @@ adminActions.forEach(btn => {
     alert(`Funcionalidad de "${btn.textContent}" próximamente disponible`);
   });
 });
+

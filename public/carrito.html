@@ -1,39 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito | ModoModa 👗</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carrito - ModoModa</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header>
-    <h1>🛍️ ModoModa</h1>
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/productos.html">Productos</a>
-      <a href="#">Contacto</a>
-    </nav>
+    <div class="container header-inner">
+      <div class="brand"><span class="logo"></span><span>ModoModa</span></div>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/productos.html">Productos</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="cart">
+    <div class="container cart">
       <h2>Tu Carrito</h2>
       <div id="cart-items"></div>
+
       <div class="cart-total">
         <strong>Total: </strong> <span id="total-price">$0</span>
       </div>
-      <button id="checkout-btn">Finalizar Compra</button>
-    </section>
+
+      <div style="text-align:right; margin-top:1rem;">
+        <button id="checkout-btn" class="btn-primary">Finalizar Compra</button>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 ModoModa - Todos los derechos reservados.</p>
-    <p>Contacto: <a href="https://wa.me/5493512002527?text=Hola%20ModoModa">WhatsApp</a></p>
-  </footer>
+  <footer> ... </footer>
 
-  <!-- Scripts -->
-  <script src="/js/main.js"></script>
   <script src="/js/carrito.js"></script>
 </body>
 </html>
+

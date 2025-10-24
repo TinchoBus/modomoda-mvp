@@ -3,40 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ModoModa 👗 | Tienda Online</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Productos | ModoModa 👗</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- ======= HEADER ======= -->
   <header>
     <h1>🛍️ ModoModa</h1>
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Productos</a>
-      <a href="#">Contacto</a>
-      <button id="cart-btn">🛒 Carrito</button>
+      <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/productos.html">Productos</a>
+        <a href="/admin.html">Admin</a>
+      </div>
+      <div class="cart-link">
+        <a href="/carrito.html">🛒</a>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Tu estilo, tu modo.</h2>
-      <p>Ropa, accesorios y fragancias que marcan tendencia.</p>
-      <button class="btn-primary">Explorar ahora</button>
-    </section>
+  <!-- ======= HERO ======= -->
+  <section class="hero">
+    <h2>Bienvenido a ModoModa</h2>
+    <p>Calidad y estilo minimalista a tu alcance.</p>
+    <a href="#productos" class="btn">Ver Productos</a>
+  </section>
 
-    <section class="products">
-      <h2>Productos Destacados</h2>
-      <div class="product-grid" id="product-list"></div>
-    </section>
-  </main>
+  <!-- ======= PRODUCTOS / CARRUSEL ======= -->
+  <section class="products" id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev">‹</button>
+      <div class="carousel-track">
+        <!-- Cards se generarán dinámicamente con JS -->
+      </div>
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
 
+  <!-- ======= FOOTER ======= -->
   <footer>
     <p>© 2025 ModoModa - Todos los derechos reservados.</p>
     <p>Contacto: <a href="https://wa.me/5493512002527?text=Hola%20ModoModa">WhatsApp</a></p>
   </footer>
 
-  <script src="/js/main.js"></script>
-  
-
+  <script src="js/main.js"></script>
 </body>
 </html>
+
