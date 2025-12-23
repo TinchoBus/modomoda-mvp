@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | ModoModa 👗</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="logo">ModoModa</h1>
+    <nav class="nav">
+      <a href="/">Inicio</a>
+      <a href="/productos.html" class="active">Productos</a>
+      <a href="#">Contacto</a>
+      <button id="cart-btn">🛒</button>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN -->
+  <main>
+    <section class="productos">
+      <h2>Todos los productos</h2>
+
+      <!-- GRID DONDE JS CARGA LAS TARJETAS -->
+      <div class="producto-grid" id="lista-productos"></div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 ModoModa - Todos los derechos reservados.</p>
+    <p>Contacto: <a href="https://wa.me/5493512002527?text=Hola%20ModoModa">WhatsApp</a></p>
+  </footer>
+
+  <!-- JS -->
+  <script src="/js/main.js"></script>
+  <script src="/js/productos-data.js"></script>
+<script src="/js/carrito.js"></script>        <!-- define agregarAlCarrito, contador -->
+<script src="/js/productos.js"></script>      <!-- renderiza grid y botones -->
+
+</body>
+</html>

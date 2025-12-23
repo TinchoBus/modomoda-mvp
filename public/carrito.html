@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carrito - ModoModa</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo">🛍️</span>
+        <span>ModoModa</span>
+      </div>
+
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/productos.html">Productos</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ================= CONTENIDO ================= -->
+  <main>
+    <section class="carrito-contenedor">
+      <h2 class="titulo-carrito">🛒 Tu Carrito</h2>
+
+      <!-- ITEMS -->
+      <div id="cart-items" class="cart-items"></div>
+
+      <!-- TOTAL -->
+      <p class="total-carrito">
+        Total: <span id="total-price">$0</span>
+      </p>
+
+      <!-- BOTÓN FINALIZAR -->
+      <button id="checkout-btn" class="btn-finalizar">
+        Finalizar compra
+      </button>
+
+      <!-- MENSAJE -->
+      <div id="mensaje-final"></div>
+
+    </section>
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© 2025 ModoModa - Todos los derechos reservados.</p>
+  </footer>
+
+<script src="js/productos-data.js"></script>  <!-- para mostrar imágenes si usás product.imagen -->
+<script src="js/carrito.js"></script>
+
+</body>
+</html>
+
+
