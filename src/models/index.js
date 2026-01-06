@@ -1,14 +1,11 @@
-console.log('ENV:', process.env.DB_USER, process.env.DB_PASSWORD);
-
-
 const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize(
-  'modomoda',
-  'root',
-  'root', // 👈 tu password real
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: 'localhost',
+    host: process.env.DB_HOST,
     dialect: 'mysql'
   }
 );
@@ -19,11 +16,21 @@ db.Sequelize = Sequelize;
 
 db.Product = require('./product.model')(sequelize, DataTypes);
 
-db.sequelize.sync()
-  .then(() => console.log('📦 Tablas sincronizadas'))
-  .catch(err => console.error(err));
+db.Category = require('./category.model')(sequelize, DataTypes);
+
+// Relaciones
+db.Category.hasMany(db.Product, {
+  foreignKey: 'categoryId'
+});
+
+db.Product.belongsTo(db.Category, {
+  foreignKey: 'categoryId'
+});
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
 
 
 module.exports = db;
-
-

@@ -1,39 +1,29 @@
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
-const fs = require('fs');
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
-const dataDir = path.join(__dirname, '../../data');
-if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+require('dotenv').config();
 
-const dbPath = path.join(dataDir, 'modomoda.sqlite');
+const db = require('./models');
 
-const db = new sqlite3.Database(dbPath, () => {
-  console.log('[DB] Conectada:', dbPath);
-});
+app.use(cors());
+app.use(express.json());
 
-const init = () => {
-  db.serialize(() => {
-    db.run(`
-      CREATE TABLE IF NOT EXISTS products (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        description TEXT,
-        price REAL,
-        category TEXT,
-        image_url TEXT
-      )
-    `);
+// rutas
+app.use('/api/products', require('./routes/products.routes'));
 
-    db.run(`
-      CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        email TEXT UNIQUE,
-        password TEXT,
-        role TEXT
-      )
-    `);
+const PORT = 7777;
+
+db.sequelize.authenticate()
+  .then(() => {
+    console.log('✅ MySQL conectado');
+    return db.sequelize.sync({ alter: false });
+  })
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`🚀 Backend corriendo en http://localhost:${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('❌ Error DB:', err);
   });
-};
-
-module.exports = { db, init };
